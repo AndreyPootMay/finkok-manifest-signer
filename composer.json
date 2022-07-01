@@ -1,5 +1,5 @@
 {
-    "name": "andreypootmay/finkok-manifesto-signer",
+    "name": "andreypootmay/finkok-manifest-signer",
     "type": "project",
     "description": "Project that initialize an enviroment in finkok web service and sign the manifesto",
     "keywords": ["finkok", "cli", "signer"],

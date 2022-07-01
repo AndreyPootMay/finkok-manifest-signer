@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SignerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,10 +22,17 @@ Route::group([
     Route::post('signup', [AuthController::class, 'signUp']);
 
     Route::group([
-      'middleware' => 'auth:api'
-    ], function() {
+        'middleware' => 'auth:api'
+    ], function () {
         Route::get('logout', [AuthController::class, 'logout']);
         Route::get('user', [AuthController::class, 'user']);
     });
 });
 
+Route::group([
+    'prefix' => 'signer',
+    'middleware' => 'auth:api'
+], function () {
+    Route::get('obtain-contracts', [SignerController::class, 'obtainContracts']);
+    Route::post('sign-and-send', [SignerController::class, 'signAndSend']);
+});
