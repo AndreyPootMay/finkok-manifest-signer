@@ -24,7 +24,7 @@ final class CreateManifiestoSignsTable extends Migration
             $table->string('xml', 250)->nullable(false);
             $table->string('pdf', 250)->nullable(false);
             $table->string('cadena', 250)->nullable(false);
-            $table->tinyInteger('active', 1, false, true)->default(1);
+            $table->tinyInteger('active', false, true)->default(1);
             $table->timestamps();
         });
     }
